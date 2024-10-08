@@ -1,14 +1,22 @@
-class Program
+class Journal
 {
     static string addEntry()
     {
+        string _Entry = new Entry();
 
     }
-    static string display()
+    static void display()
     {
 
     }
-    static
+    static string save()
+    {
+
+    }
+    static void load()
+    {
+
+    }
 }
 
 ////Journal
