@@ -1,22 +1,12 @@
 class Entry
 {
-    static string getPrompt()
+    public string _text;
+    public string _prompt = Prompt.gereratePrompt();
+    static List<string> getEntry(date, prompt)
     {
-        Prompt.generatePrompt();
-    }
-    static string getEntry()
-    {
+
         string _text = Console.ReadLine();
-        Console.WriteLine("Looks good: y");
-        Console.WriteLine("Try again: n");
-        if (edit = "n")
-        {
-            string _text = Console.ReadLine();
-        }
-        else 
-        {
-            return _text;
-        }
+        return $"{_date}\n, {prompt}\n, {_text}\n "
 
     }
 

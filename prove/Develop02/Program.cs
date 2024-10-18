@@ -8,21 +8,23 @@ class Program
     static void Main(string[] args)
     {
         
-         string response = "";
-        while (response != "q")
-        {
-            Console.WriteLine("Add Entry: press A");
-            Console.WriteLine("Save Entry: press S");
-            Console.WriteLine("Load Entry: press L");
-            Console.WriteLine("Quit: Q");
-            static void runJournal()
-            {
-
-            }
-        }
+        // public string response = "";
+        // while (response != "q")
+        // {
+        //     Console.WriteLine("Add Entry: press A");
+        //     Console.WriteLine("Save Entry: press S");
+        //     Console.WriteLine("Load Entry: press L");
+        //     Console.WriteLine("Quit: Q");
+        //     if (response = "A")
+        //     {
+        //         public string _new entry Journal.addEntry();
+        //     }
+        string test = Prompt.selectPrompt();
+        Console.WriteLine(test);
     }
+ }
 
-}
+
 
 ///display menu loop
 ///add to journal
