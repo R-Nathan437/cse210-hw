@@ -1,4 +1,7 @@
+using System.ComponentModel.DataAnnotations;
+
 public class Scripture
+_refrence = Reference
 {
     private string _scripture;
 
@@ -8,4 +11,6 @@ public class Scripture
         
 
     }    
+    Display()
+
 }
