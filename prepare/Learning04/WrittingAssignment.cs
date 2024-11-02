@@ -1,8 +1,13 @@
-public class WrittingAssignment
+public class WrittingAssignment : Assignment
 {
     private string _title;
+    public WrittingAssignment(string studentName, string topic, string title) : base (studentName, topic)
+    {
+        _title = title;
+    }
     public string GetwrittingInfomation()
     {
-        return _title;
+        string _studentName = GetStudentName();
+        return $"{_title}\n Author: {_studentName}";
     } 
 }

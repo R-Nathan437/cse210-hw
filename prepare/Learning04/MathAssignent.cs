@@ -1,9 +1,16 @@
-public class MathAssignment
+using System.Globalization;
+
+public class MathAssignment : Assignment
 {
     private string _textbookSection;
     private string _problem;
-    static string GetHomeworkList()
+    public MathAssignment(string studentName, string topic, string textbookSection, string problem) : base(studentName, topic)
     {
-        return _textbookSection, _problem;
+        _textbookSection = textbookSection;
+        _problem = problem;
+    }
+    public string GetHomeworkList()
+    {
+        return $"Section: {_textbookSection}\n Problems: {_problem}";
     }
 }
