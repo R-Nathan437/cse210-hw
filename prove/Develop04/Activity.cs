@@ -1,31 +1,27 @@
 public class Activity
 {
-    protected string _startMessege;
-    protected string _endMessege;
+    public string _startMessege;
+    public string _endMessege;
     public int _time;
-    protected string _description;
-    Activity(int time)
+    public string _description;
+    Activity(int item)
     {
-      _time = time;
+      _time = item;
     }
 
-    public void Animation()
+    public void Animation(int time)
     {
-       do
+      _time = time;
+      for (int i = 0; i < _time; i++)
       {
          Console.Write("/");
-         Console.Clear();
+         Thread.Sleep(250);
          Console.Write("|");
-         Console.Clear();
+         Thread.Sleep(250);
          Console.Write("\\");
-         Console.Clear();
+         Thread.Sleep(250);
          Console.Write("-");
-         Console.Clear();
-         _time -= -1;
-      }
-     while (_time != 0);
-      {
-        Console.Clear();
+         Thread.Sleep(250);
       }
    }
 }
