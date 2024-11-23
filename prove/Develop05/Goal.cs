@@ -18,25 +18,11 @@ public abstract class Goal
     }
     public void DisplayPoints()
     {
-        Console.WriteLine($"Current points: {_points}");
+        Console.WriteLine($"{_points} points\n");
     }
-    public int GetPoints()
-    {
-        if (_points <= 0)
-        {
-            _points = 100;
-            return _points;
-        }
-        else 
-        {
-            return _points;
-        }
-    }
-    public void RecordGoal()
-    {
-        _points += _points;
-        DisplayPoints();
-    }
-    public abstract string CreateGoal();
+    public abstract int GetPoints();
+    
+    public abstract void RecordGoal();
+    
     
 }
