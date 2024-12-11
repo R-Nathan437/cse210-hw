@@ -7,22 +7,56 @@ class Program
 {
     static void Main(string[] args)
     {
-        
-        // public string response = "";
-        // while (response != "q")
-        // {
-        //     Console.WriteLine("Add Entry: press A");
-        //     Console.WriteLine("Save Entry: press S");
-        //     Console.WriteLine("Load Entry: press L");
-        //     Console.WriteLine("Quit: Q");
-        //     if (response = "A")
-        //     {
-        //         public string _new entry Journal.addEntry();
-        //     }
-        string test = Prompt.selectPrompt();
-        Console.WriteLine(test);
+        Journal journal = new Journal();
+        bool _response = true;
+        while (_response)
+        {
+             Console.WriteLine("Add Entry: Type A");
+             Console.WriteLine("Save Entry: Type S");
+             Console.WriteLine("Load Entry: Type L");
+             Console.WriteLine("Display Entry: D");
+             Console.WriteLine("Clear File: C");
+             Console.WriteLine("Quit: Type Q");
+             
+             string choice = Console.ReadLine().ToUpper();
+             if (choice == "A")
+             {
+                journal.addEntry();
+                Console.WriteLine();
+             }
+             else if (choice == "S")
+             {
+                Console.Write("Enter File Name: ");
+                string filename = Console.ReadLine();
+                journal.save(filename);
+             }
+             else if (choice == "L")
+             {
+                Console.Write("Enter File Name:");
+                string loadFilename = Console.ReadLine();
+                journal.load(loadFilename);
+             }
+             else if (choice == "D")
+             {
+                journal.display();
+             }
+             else if (choice == "C")
+             {
+                Console.Write("Enter File Name: ");
+                string clearFilename = Console.ReadLine();
+                journal.clear(clearFilename);
+             }
+             else if (choice == "Q")
+             {
+                _response = false;
+             }
+            else
+            {
+                Console.WriteLine("Invalid input try again.");
+            }
+        }
     }
- }
+}
 
 
 

@@ -1,36 +1,76 @@
 using System.IO;
+using System.IO.Enumeration;
 using System.Security.Cryptography.X509Certificates;
-class Journal
+public class Journal
 {
-    public string _entry;
-    static string addEntry()
+    public List<Entry> _entries = new List<Entry>();
+    public void addEntry()
     {
-       
-
+        Entry newEntry = new Entry();
+        newEntry.GenerateDate();
+        newEntry.GeneratePrompt();
+        newEntry.GetText();
+        _entries.Add(newEntry);
     }
-    static void display()
+    public void display()
     {
-
-    }
-    static void save()
-    {
-        string filename = Console.ReadLine();
-        using (StreamWriter outputFile = new StreamWriter(filename))
+        foreach (Entry entry in _entries)
         {
-            outputFile.WriteLine(_entry);
+            Console.WriteLine($"Date: {entry._date}");
+            Console.WriteLine(entry._prompt);
+            Console.WriteLine(entry._text);
+            Console.WriteLine();
+        }
+    }
+    public void save(string filename)
+    {
+        using (StreamWriter outputFile = new StreamWriter(filename, true))
+        {
+            foreach (Entry entry in _entries)
+            {
+                outputFile.WriteLine(entry._date);
+                outputFile.WriteLine(entry._prompt);
+                outputFile.WriteLine(entry._text);
+            }
         }
 
     }
-    static void load()
+    public void clear(string clearFilename)
     {
-        string[] lines = System.IO.File.ReadAllLines(filename);
-        foreach (string line in lines)
+        using (StreamWriter outputFile = File.CreateText(clearFilename))
         {
-            string[] parts = line.Split(",");
+            outputFile.Write(string.Empty);
+        }
+    }
+    public void load(string loadfilename)
+    {
+        if (loadfilename.EndsWith(".csv"))
+        {
+            string[] lines = System.IO.File.ReadAllLines(loadfilename);
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split(",");
+                string date = parts[0];
+                string prompt = parts[1];
+                string text = parts[2];
+                Console.WriteLine($"Date: {date}");
+                Console.WriteLine(prompt);
+                Console.WriteLine(text);
+                Console.WriteLine();
             
+            }
+        }
+        else
+        {
+            using (StreamReader reader = new StreamReader(loadfilename))
+            {
+                string journalEntries = reader.ReadToEnd();
+                Console.Write(journalEntries);
+            }
         }
     }
 }
+
 
 ////Journal
 ///add entry method
