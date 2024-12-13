@@ -1,16 +1,20 @@
 using System.ComponentModel.DataAnnotations;
 
 public class Scripture
-_refrence = Reference
-{
+    {
     private string _scripture;
+    private Reference _reference;
 
-    static void SetScripture(List<string> verse, string reference)
+    public Scripture(string verse, Reference reference)
     {
         _scripture = verse;
-        
+        _reference = reference;
 
     }    
-    Display()
+    
+    public string convertToString()
+    {
+        return string.Format("{0}", _scripture);
+    }
 
 }
