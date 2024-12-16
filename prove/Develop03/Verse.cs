@@ -21,7 +21,7 @@ public class Verse
         do
         {
             int randomI = new Random().Next(0, _scriptureList.Count());
-            if(_scriptureList[randomI].Contains('_') == false);
+            if(_scriptureList[randomI].Contains('_') == false)
             {
                 _scriptureList[randomI] = new string('_', _scriptureList[randomI].Length);
                 _wordsRemoved++;
