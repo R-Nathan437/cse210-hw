@@ -1,6 +1,6 @@
 using System.Diagnostics.Contracts;
 
-public class Simple : Goal
+public class SimpleGoal : Goal
 {
     private string _status;
     public Simple(string name, string description, int points, string type) : base(name, description, points, type)
