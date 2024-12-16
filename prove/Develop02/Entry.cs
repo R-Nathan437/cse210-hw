@@ -10,7 +10,7 @@ public class Entry
     public void GeneratePrompt()
     {
         Random random = new Random();
-        int randomIndex = random.Next(0, _prompts.Count);
+        int randomIndex = random.Next(0, _prompts.Count());
         _prompt = _prompts[randomIndex];
         Console.WriteLine($"Prompt: {_prompt}");
     }
