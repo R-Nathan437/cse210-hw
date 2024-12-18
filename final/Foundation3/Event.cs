@@ -36,7 +36,7 @@ public class Event
         get{return _type;}
         set{_type = value;}
     }
-     private int _numberAttendees;
+    protected int _numberAttendees;
     public int NumberAttendees
     {
         get{return _numberAttendees;}
