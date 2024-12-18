@@ -29,7 +29,7 @@ public class Address
         _stateOrProvince = stateOrProvince;
     }
 
-    public string fullAddress()
+    public string FullAddress()
     {
         return $"{streetAddress}\n{city}, {stateOrProvince}\n";
     }

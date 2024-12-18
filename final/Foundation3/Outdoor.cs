@@ -1,18 +1,18 @@
 public class Outdoor : Event
 {
     private string _weather;
-    public string weather
+    public string Weather
     {
         get{return _weather;}
         set{_weather = value;}
     }
     public Outdoor(string title, string description, string date, string time, Address address, int numnberAttendees, string weather) : base(title, description, date, time, address, numnberAttendees)
     {
-        _weather = weather;
-        type = "Outdor";
+        Weather = weather;
+        Type = "Outdor";
     }
     public void DisplayOutdoor()
     {
-        Console.WriteLine($"{title}\n{description}\n{date}|{time}\n||{weather}||\n\n{address.fullAddress()}\n");
+        Console.WriteLine($"{Title}\n{Description}\n{Date}|{Time}\n||{Weather}||\n\n{Address.FullAddress()}\n");
     }
 }

@@ -1,13 +1,13 @@
 public class Reception : Event
 {
     private string _userEmail;
-    public string userEmail
+    public string UserEmail
     {
         get{return _userEmail;}
         set{_userEmail = value;}
     }
     private string _eventEmail;
-    public string eventEmail
+    public string EventEmail
     {
         get{return _eventEmail;}
         set{_eventEmail = value;}
@@ -15,9 +15,9 @@ public class Reception : Event
    
     public Reception(string title, string description, string date, string time, Address address, int numberAttendees, string eventEmail) : base(title, description, date, time, address, numberAttendees)
     {
-        _eventEmail = eventEmail;
-        numberAttendees = 0;
-        type = "Reception";
+        EventEmail = eventEmail;
+        NumberAttendees = 0;
+        Type = "Reception";
     }
     public void Rsvp()
     {
@@ -29,9 +29,9 @@ public class Reception : Event
             if (response == "y")
             {
                 Console.WriteLine("What is your email:");
-                userEmail = Console.ReadLine();
+                UserEmail = Console.ReadLine();
                 Console.WriteLine("Thank you for your RSVP");
-                numberAttendees++;
+                NumberAttendees++;
                 running = false;
             }
             else if (response == "n")
@@ -47,6 +47,6 @@ public class Reception : Event
     }
     public void DisplayReception()
     {
-         Console.WriteLine($"{title}\n{description}\n{date}|{time}\n\n{address.fullAddress()}\n{eventEmail} || {numberAttendees}: RSVP'S\n");
+         Console.WriteLine($"{Title}\n{Description}\n{Date}|{Time}\n\n{Address.FullAddress()}\n{EventEmail} || {NumberAttendees}: RSVP'S\n");
     }
 }
