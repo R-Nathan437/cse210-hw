@@ -4,7 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 public class Journal
 {
     public List<Entry> _entries = new List<Entry>();
-    public void addEntry()
+    public void AddEntry()
     {
         Entry newEntry = new Entry();
         newEntry.GenerateDate();
@@ -12,7 +12,7 @@ public class Journal
         newEntry.GetText();
         _entries.Add(newEntry);
     }
-    public void display()
+    public void Display()
     {
         foreach (Entry entry in _entries)
         {
@@ -22,7 +22,7 @@ public class Journal
             Console.WriteLine();
         }
     }
-    public void save(string filename)
+    public void Save(string filename)
     {
         using (StreamWriter outputFile = new StreamWriter(filename, true))
         {
@@ -35,14 +35,14 @@ public class Journal
         }
 
     }
-    public void clear(string clearFilename)
+    public void Clear(string clearFilename)
     {
         using (StreamWriter outputFile = File.CreateText(clearFilename))
         {
             outputFile.Write(string.Empty);
         }
     }
-    public void load(string loadfilename)
+    public void Load(string loadfilename)
     {
         if (loadfilename.EndsWith(".csv"))
         {

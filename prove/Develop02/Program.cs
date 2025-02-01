@@ -7,9 +7,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Journal journal = new Journal();
-        bool _response = true;
-        while (_response)
+        Journal _journal = new Journal();
+        bool response = true;
+        while (response)
         {
              Console.WriteLine("Add Entry: Type A");
              Console.WriteLine("Save Entry: Type S");
@@ -21,34 +21,34 @@ class Program
              string choice = Console.ReadLine().ToUpper();
              if (choice == "A")
              {
-                journal.addEntry();
+                _journal.AddEntry();
                 Console.WriteLine();
              }
              else if (choice == "S")
              {
                 Console.Write("Enter File Name: ");
                 string filename = Console.ReadLine();
-                journal.save(filename);
+                _journal.Save(filename);
              }
              else if (choice == "L")
              {
                 Console.Write("Enter File Name:");
                 string loadFilename = Console.ReadLine();
-                journal.load(loadFilename);
+                _journal.Load(loadFilename);
              }
              else if (choice == "D")
              {
-                journal.display();
+               _journal.Display();
              }
              else if (choice == "C")
              {
                 Console.Write("Enter File Name: ");
                 string clearFilename = Console.ReadLine();
-                journal.clear(clearFilename);
+                _journal.Clear(clearFilename);
              }
              else if (choice == "Q")
              {
-                _response = false;
+                response = false;
              }
             else
             {
